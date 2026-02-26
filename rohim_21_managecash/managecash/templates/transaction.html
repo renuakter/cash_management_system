@@ -1,0 +1,59 @@
+{% extends 'master/base.html' %}
+
+{% block content %}
+    <h1>Transactions</h1>
+    
+    <div class="card">
+        <h2 style="text-align: left; margin-bottom: 20px;">
+            <i class="fas fa-arrow-up" style="color: #48bb78;"></i> Cash In
+        </h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>SL</th>
+                    <th>Source</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            
+            {% for data in cash_data %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{data.source}}</td>
+                <td style="color: #48bb78; font-weight: 600;">+${{data.amount}}</td>
+                <td>{{data.datetime}}</td>
+            </tr>
+                
+            {% endfor %}
+                
+        </table>
+    </div>
+
+    <div class="card">
+        <h2 style="text-align: left; margin-bottom: 20px;">
+            <i class="fas fa-arrow-down" style="color: #f56565;"></i> Cash Out
+        </h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>SL</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            
+            {% for data in expense_data %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{data.description}}</td>
+                <td style="color: #f56565; font-weight: 600;">-${{data.amount}}</td>
+                <td>{{data.datetime}}</td>
+            </tr>
+                
+            {% endfor %}
+                
+        </table>
+    </div>
+{% endblock content %}

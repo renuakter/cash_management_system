@@ -1,0 +1,26 @@
+{% extends 'master/base.html' %}
+
+{% block content %}
+    <h1>Welcome to Cash Management</h1>
+    
+    <div class="dashboard-grid">
+        <div class="stat-card cash">
+            <i class="fas fa-wallet"></i>
+            <div class="label">Total Cash</div>
+            <div class="value">{{total_cash}}</div>
+        </div>
+        
+        <div class="stat-card expense">
+            <i class="fas fa-credit-card"></i>
+            <div class="label">Total Expense</div>
+            <div class="value">{{total_expense}}</div>
+        </div>
+        
+        <div class="stat-card balance">
+            <i class="fas fa-chart-line"></i>
+            <div class="label">Total Balance</div>
+            <div class="value">{{total_balance}}</div>
+        </div>
+    </div>
+{% endblock content %}
+    
